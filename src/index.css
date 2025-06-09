@@ -1,13 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 body {
+  background-color: #121212; /* Un noir doux pour une élégance moderne */
+  color: #f5f5f5; /* Blanc légèrement atténué pour éviter le contraste trop fort */
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6; /* Amélioration de la lisibilité */
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transition fluide pour les changements de thème */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Pour un rendu élégant des éléments interactifs */
+a {
+  color: #bb86fc; /* Une teinte violette pour des liens élégants */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ffffff; /* Rendre les liens plus lumineux au survol */
+}
+
+/* Amélioration pour les boutons */
+button {
+  background-color: #1f1f1f; /* Fond sombre mais distinct */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px; /* Coins arrondis pour une élégance moderne */
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+button:hover {
+  background-color: #333333;
+  transform: scale(1.05); /* Légère mise en valeur au survol */
+}
+
+/* Pour améliorer l'apparence des conteneurs */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* Ombrage subtil pour la profondeur */
+}
+
+/* Typographie élégante */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+p {
+  margin-bottom: 12px;
+}
+
+/* Ajout de fluidité pour mobile */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 15px;
+  }
+}
+
+
+input[type="text"], input[type="email"], input[type="password"], textarea {
+  background-color: #1f1f1f; /* Fond sombre pour s'accorder avec le thème */
+  color: #ffffff; /* Texte blanc pour une lisibilité optimale */
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  border: 1px solid #333333; /* Bord subtil pour la structure */
+  border-radius: 8px; /* Coins arrondis pour un look moderne */
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Effet de focus élégant */
+  width: 50%;
+  box-sizing: border-box; /* Assure que la largeur inclut les bordures */
+}
+
+input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="password"]::placeholder, textarea::placeholder {
+  color: #888888; /* Placeholder doux et discret */
+  font-style: italic; /* Style subtil pour distinguer les placeholders */
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus {
+  border-color: #bb86fc; /* Couleur élégante pour le focus */
+  box-shadow: 0px 0px 8px rgba(187, 134, 252, 0.8); /* Lumière subtile au focus */
+}
+
+/* Pour le style des boutons de soumission */
+input[type="submit"] {
+  background-color: #bb86fc; /* Couleur primaire élégante */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #9a67ea; /* Variation de couleur pour le survol */
+  transform: scale(1.05); /* Effet de mise en avant */
+}
+
+textarea {
+  resize: vertical; /* Permet seulement le redimensionnement vertical */
+  min-height: 100px; /* Hauteur minimale pour plus de confort */
+}
+
+
+table {
+  width: 100%; /* La table occupe toute la largeur disponible */
+  border-collapse: collapse; /* Élimine les espaces entre les bordures */
+  background-color: #1f1f1f; /* Fond sombre pour s'accorder avec le thème */
+  color: #ffffff; /* Texte clair pour une meilleure lisibilité */
+  border-radius: 8px; /* Coins arrondis pour un look moderne */
+  overflow: hidden; /* Assure que les coins arrondis s'appliquent bien */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* Effet d'ombre pour une profondeur visuelle */
+}
+
+th, td {
+  padding: 12px 16px; /* Espacement interne pour une meilleure lisibilité */
+  text-align: left; /* Texte aligné à gauche par défaut */
+}
+
+th {
+  background-color: #272727; /* Fond légèrement plus sombre pour distinguer les en-têtes */
+  font-weight: 600; /* En-têtes plus marqués */
+  text-transform: uppercase; /* Texte en majuscules pour un style moderne */
+  font-size: 0.9rem;
+  border-bottom: 2px solid #333333; /* Bordure inférieure pour séparer les en-têtes */
+}
+
+td {
+  border-bottom: 1px solid #333333; /* Ligne discrète entre les lignes */
+}
+
+tr:nth-child(even) {
+  background-color: #222222; /* Couleur alternative pour les lignes paires */
+}
+
+tr:hover {
+  background-color: #333333; /* Mise en valeur au survol */
+  transition: background-color 0.3s ease; /* Animation fluide pour le survol */
+}
+
+/* Style pour un conteneur table-responsive */
+.table-container {
+  overflow-x: auto; /* Permet le défilement horizontal sur les petits écrans */
+  margin: 20px 0;
+  border-radius: 8px; /* Coins arrondis pour un conteneur élégant */
 }
